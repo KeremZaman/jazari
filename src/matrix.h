@@ -6,3 +6,4 @@ Matrix* ident(int n);
 Matrix* transpose(Matrix* mtrx);
 Matrix* add(Matrix* m1, Matrix* m2);
 Matrix* dotp(Matrix* m1, Matrix* m2);
+void print_matrix(Matrix* mtrx);

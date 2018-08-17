@@ -96,3 +96,15 @@ Matrix* dotp(Matrix* m1, Matrix* m2) {
 	}
 	return mp;
 }
+<<<<<<< HEAD
+=======
+
+void print_matrix(Matrix* mtrx) {
+	for (int i = 0; i < mtrx->nrows; i++) {
+		for (int j = 0; j < mtrx->ncols; j++) {
+			printf("%lf\t ", mtrx->val[i][j]);
+		}
+		printf("\n");
+	}
+}
+>>>>>>> Add print_matrix()
