@@ -49,7 +49,7 @@ Matrix* mdiag(int m, int n, double val) {
 }
 
 Matrix* ident(int n) {
-	Matrix* mp = diag(n, n, 1);
+	Matrix* mp = mdiag(n, n, 1);
 	return mp;
 
 }
