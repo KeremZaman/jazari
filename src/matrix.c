@@ -1,10 +1,5 @@
+#include "matrix.h"
 #include <stdio.h>
-struct matrix {
-	int nrows;
-	int ncols;
-	double** val;
-};
-typedef struct matrix Matrix;
 
 void error(char* str) {
 	fprintf(stderr, str);
@@ -27,7 +22,7 @@ Matrix* mcreate(int m, int n) {
 }
 
 Matrix* arr2matrix(int m, int n, double* arr) {
-	Matrix* mp = (Matrix*) malloc(sizeof(Matrix));
+	Matrix* mp = (Matrix*)malloc(sizeof(Matrix));
 	mp->nrows = m;
 	mp->ncols = n;
 	mp->val = NULL;
@@ -65,7 +60,7 @@ Matrix* transpose(Matrix* mtrx) {
 }
 
 Matrix* add(Matrix* m1, Matrix* m2) {
-	if (m1->nrows != m2->ncols || m1->ncols != m2->ncols) {
+	if (m1->nrows != m2->nrows || m1->ncols != m2->ncols) {
 		error("Size incompability!");
 	}
 	int m = m1->nrows;
@@ -78,7 +73,7 @@ Matrix* add(Matrix* m1, Matrix* m2) {
 }
 
 Matrix* dotp(Matrix* m1, Matrix* m2) {
-	if (m1->ncols != m2->nrows) {
+	if (m1->ncols != m2->ncols) { //look later
 		error("Size incompability!");
 	}
 	int m = m1->nrows;
@@ -96,8 +91,16 @@ Matrix* dotp(Matrix* m1, Matrix* m2) {
 	}
 	return mp;
 }
-<<<<<<< HEAD
-=======
+
+Matrix* scalarp(double scalar, Matrix* mtrx) {
+	int m = mtrx->nrows;
+	int n = mtrx->ncols;
+	Matrix* mp = mcreate(m, n);
+	for (int i = 0; i < m; i++)
+		for (int j = 0; j < n; j++)
+			mp->val[i][j] = scalar * mtrx->val[i][j];
+	return mp;
+}
 
 void print_matrix(Matrix* mtrx) {
 	for (int i = 0; i < mtrx->nrows; i++) {
@@ -107,4 +110,3 @@ void print_matrix(Matrix* mtrx) {
 		printf("\n");
 	}
 }
->>>>>>> Add print_matrix()
