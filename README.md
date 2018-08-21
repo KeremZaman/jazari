@@ -8,7 +8,7 @@
 ## Table of Contents
 * [Matrix Operations](#matrix-operations)
     * [Creation](#creation)
-    * [Diagonal and Indetity Matrices](#diagonal-and-identity-matrices)
+    * [Diagonal and Identity Matrices](#diagonal-and-identity-matrices)
     * [Transpose, Addition and Dot Product](#transpose-addition-and-dot-product)
     * [Visualizing Matrix](visualizing-matrix)
 * [Linear Regression](#linear-regression)
