@@ -10,7 +10,7 @@
     * [Creation](#creation)
     * [Diagonal and Identity Matrices](#diagonal-and-identity-matrices)
     * [Transpose, Addition and Dot Product](#transpose-addition-and-dot-product)
-    * [Visualizing Matrix](visualizing-matrix)
+    * [Visualizing Matrix](#visualizing-matrix)
 * [Linear Regression](#linear-regression)
     * [Creating and Running the Model](#creating-and-running-the-model)
     * [Setting-Custom-Optimizer](#setting-custom-optimizer)
