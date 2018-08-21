@@ -58,7 +58,7 @@ jazari presents a very simple usage to run linear regression model. Once you cre
 ## Creating and Running the Model
 Firstly, initialize your model:
 
-`LinRegModel* lrm = init_lrm(params, training_data, targets, learning_rate, epoch_num);`
+`LRModel* lrm = init_linRM(params, training_data, targets, learning_rate, epoch_num);`
 
 In your `Matrix* training_data`, each column is an instance from dataset. `Matrix* targets` points to a vector in which each row is output of an instance.
 
@@ -73,5 +73,5 @@ Set optimizer after initialize your model:
 
 `lrm->run = your_own_optimizer;`
 
-Note that `your_own_optimizer()` must be a void function which only accepts one parameter in type of `LinRegModel`. 
+Note that `your_own_optimizer()` must be a void function which only accepts one parameter in type of `LRModel`. 
 
