@@ -66,7 +66,7 @@ int main()
 	Matrix* test_targets = arr2matrix(18, 1, test_outputs);
 	
 	Matrix* params = mcreate(4, 1);
-	LinRegModel* lrm = init_lrm(params, training_data, targets, 0.003, 100);
+	LRModel* lrm = init_linRM(params, training_data, targets, 0.003, 100);
 	lrm->run(lrm);
 	
 	printf("\nDATASET OUTPUTS:\n");
@@ -75,7 +75,7 @@ int main()
 	}
 	printf("\nPREDICTED OUTPUTS\n");
 	for (int i = 0; i < 18; i++) {
-		double y = hyp(lrm->params, arr2matrix(18, 1, test_features[i]));
+		double y = lrm->hyp(lrm->params, arr2matrix(18, 1, test_features[i]));
 		printf("%lf\t", y);
 	}
 	
