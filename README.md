@@ -13,7 +13,7 @@
     * [Visualizing Matrix](#visualizing-matrix)
 * [Linear Regression](#linear-regression)
     * [Creating and Running the Model](#creating-and-running-the-model)
-    * [Setting-Custom-Optimizer](#setting-custom-optimizer)
+    * [Setting Custom Optimizer](#setting-custom-optimizer)
 
 # Matrix Operations
 
