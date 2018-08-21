@@ -8,6 +8,7 @@ typedef struct matrix Matrix;
 void error(char* str);
 Matrix* mcreate(int m, int n);
 Matrix* arr2matrix(int m, int n, double* arr);
+Matrix* get_vec(int dim, double* arr);
 Matrix* mdiag(int m, int n, double val);
 Matrix* ident(int n);
 Matrix* transpose(Matrix* mtrx);

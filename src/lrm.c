@@ -7,7 +7,7 @@ double cost_func(LinRegModel* lrm) {
 	Matrix* x = transpose(lrm->tr_data);
 	double sum = 0;
 	for (int i = 0; i < x->nrows; i++) {
-		double a = hyp(lrm->params, arr2matrix(x->ncols, 1, x->val[i])) - lrm->targets->val[i][0];
+		double a = hyp(lrm->params, get_vec(x->ncols, x->val[i])) - lrm->targets->val[i][0];
 		sum += (a*a);
 	}
 	return sum / 2;
@@ -19,8 +19,8 @@ void sgd(LinRegModel* lrm) {
 	double lr = lrm->lr;
 	for (int e = 0; e < lrm->epoch; e++) {
 		for (int i = 0; i < lrm->tr_data->ncols; i++) {
-			double diff = (lrm->targets->val[i][0]) - (hyp(lrm->params, arr2matrix(x->ncols,1,x->val[i])));
-			updated_params = add(lrm->params, scalarp(lr * diff, arr2matrix(x->ncols, 1, x->val[i])));
+			double diff = (lrm->targets->val[i][0]) - (hyp(lrm->params, get_vec(x->ncols,x->val[i])));
+			updated_params = add(lrm->params, scalarp(lr * diff, get_vec(x->ncols, x->val[i])));
 			lrm->params = updated_params;
 			printf("LOSS: %lf\n", lrm->cost_f(lrm));
 		}

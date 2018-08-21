@@ -36,6 +36,15 @@ Matrix* arr2matrix(int m, int n, double* arr) {
 	return mp;
 }
 
+Matrix* get_vec(int dim, double* arr) {
+	Matrix* mp = mcreate(dim, 1);
+	mp->ncols = 1;
+	mp->nrows = dim;
+	for (int i = 0; i < dim; i++)
+		mp->val[i][0] = arr[i];
+	return mp;
+}
+
 Matrix* mdiag(int m, int n, double val) {
 	Matrix* mp = mcreate(m, n);
 	for (int i = 0; i < m; i++)
